@@ -1,6 +1,7 @@
 import TrackCard from '@/components/trackCard';
 import WatchCard from '@/components/watchCard';
 import SleepTrack from '@/components/SleepTrack';
+import Alarm from '@/components/Alarm';
 import React from 'react';
 import { Image, StyleSheet, View, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -23,6 +24,8 @@ export default function HomeScreen() {
       <TrackCard />
 
       <SleepTrack />
+
+      <Alarm />
     </ScrollView>
   );
 }

@@ -1,21 +1,24 @@
+import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 const SleepTrack = () => {
   return (
-    <>
-      <div style={styles.sleepTrack}>
-        <div style={styles.routine}>
+    <View>
+      {/* Sleep Track Header */}
+      <View style={styles.sleepTrack}>
+        <View style={styles.routine}>
           <Image source={require("@/assets/svg/sleep.svg")} />
           <Text style={styles.routineText}>Sleep Routine</Text>
-        </div>
-
+        </View>
         <Text style={styles.routineTime}>08h 30m</Text>
-      </div>
+      </View>
 
-      <div style={styles.progress}>
-        <div style={styles.thumb}></div>
-      </div>
+      {/* Progress Bar */}
+      <View style={styles.progress}>
+        <View style={styles.thumb} />
+      </View>
 
+      {/* Time Labels */}
       <View style={styles.times}>
         <Text style={styles.timeText}>12PM</Text>
         <Text style={styles.timeText}>6PM</Text>
@@ -23,7 +26,7 @@ const SleepTrack = () => {
         <Text style={styles.timeText}>6AM</Text>
         <Text style={styles.timeText}>12PM</Text>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -31,13 +34,14 @@ export default SleepTrack;
 
 const styles = StyleSheet.create({
   sleepTrack: {
-    display: "flex",
+    display:"flex",
+    flexDirection:"row",
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 24,
   },
   routine: {
-    display: "flex",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     gap: 8,
@@ -53,15 +57,16 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 24,
     color: "#FFFFFF",
+    marginTop: 8,
   },
   progress: {
-    display: "block",
     width: "100%",
     height: 16,
     backgroundColor: "#230361",
     marginTop: 10,
     borderRadius: 10,
     position: "relative",
+    overflow: "hidden",
   },
   thumb: {
     position: "absolute",
@@ -72,9 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   times: {
-    display: "flex",
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
     marginTop: 10,
   },
@@ -82,6 +85,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
     lineHeight: 16,
-    color:"#A791B2"
+    color: "#A791B2",
   },
 });
