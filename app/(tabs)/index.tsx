@@ -5,6 +5,7 @@ import Alarm from '@/components/Alarm';
 import React from 'react';
 import { Image, StyleSheet, View, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import BestDoctors from '@/components/BestDoctors';
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.scrollView}>
@@ -26,6 +27,8 @@ export default function HomeScreen() {
       <SleepTrack />
 
       <Alarm />
+
+      <BestDoctors />
     </ScrollView>
   );
 }
